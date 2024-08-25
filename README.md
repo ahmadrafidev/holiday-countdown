@@ -1,10 +1,10 @@
-# Simple Public Holiday Countdown
+# Public Holiday Countdown
 
 A straightforward application that displays a countdown to upcoming public holidays, helping users keep track of holidays and plan their activities accordingly.
 
 ## Table of Contents
 
-- [Simple Public Holiday Countdown](#simple-public-holiday-countdown)
+- [Public Holiday Countdown](#public-holiday-countdown)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Options](#options)
