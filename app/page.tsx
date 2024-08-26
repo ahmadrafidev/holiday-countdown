@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import HolidayCountdown from '../components/HolidayCountdown';
+
+import HolidayCountdown from '@/components/HolidayCountdown';
+import DarkModeToggle from '@/components/ui/DarkModeToggle';
 
 const Page = () => {
   const [holidays, setHolidays] = useState<any[]>([]);
@@ -36,7 +38,10 @@ const Page = () => {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-12 md:p-24">
+      <header className="p-3 absolute top-0 right-0">
+        <DarkModeToggle />
+      </header>
       <HolidayCountdown holidays={holidays} />
     </main>
   );
