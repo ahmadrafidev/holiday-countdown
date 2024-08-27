@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const currentYear = new Date().getFullYear();
-  const country = searchParams.get('country') || 'US';
+  const country = searchParams.get('country') || 'ID';
 
   try {
     const response = await fetch(`https://date.nager.at/api/v3/PublicHolidays/${currentYear}/${country}`);
