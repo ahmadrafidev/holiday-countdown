@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
 
 import HolidayCountdown from '@/components/HolidayCountdown';
 import DarkModeToggle from '@/components/ui/DarkModeToggle';
@@ -71,18 +72,21 @@ const Page = () => {
       <div className="flex flex-col md:flex-row items-center justify-center">
         <div className="mb-4">
           <label htmlFor="country-select" className="mr-2 text-lg font-medium font-sans text-black dark:text-white">Select a country:</label>
-          <select
-            id="country-select"
-            value={selectedCountry}
-            onChange={(e) => setSelectedCountry(e.target.value)}
-            className="p-2 border rounded"
-          >
-            {countries.map((country) => (
-              <option key={country.countryCode} value={country.countryCode}>
-                {country.name}
-              </option>
-            ))}
-          </select>
+          <div className="relative inline-block">
+            <select
+              id="country-select"
+              value={selectedCountry}
+              onChange={(e) => setSelectedCountry(e.target.value)}
+              className="p-2 pr-10 border rounded-lg appearance-none bg-white dark:bg-black"
+            >
+              {countries.map((country) => (
+                <option key={country.countryCode} value={country.countryCode}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
+            <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500" />
+          </div>
         </div>
         <HolidayCountdown holidays={holidays} />
       </div>
